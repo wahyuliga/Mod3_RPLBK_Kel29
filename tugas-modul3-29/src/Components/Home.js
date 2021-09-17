@@ -1,7 +1,7 @@
 import { Component } from "react"; 
 import React from "react";
 import DetailProduct from "./DetailProduct";
-import Checkout from "./Checkout";
+import Harga from "./Harga";
 
 class Home extends Component {
     constructor(props) {
@@ -13,7 +13,7 @@ class Home extends Component {
                 ['Filosofi Teras', 'Henry Manampiring', 98000, 'https://ebooks.gramedia.com/ebook-covers/45496/image_highres/ID_FITE2018MTH12.jpg']
             ],
             DetailProduct: false,
-            Checkout: false,
+            Harga: false,
             Index: 0
         }
     }
@@ -34,7 +34,7 @@ class Home extends Component {
     buyProduct = (index) => {
         this.setState(() => {
             return {
-                Checkout: !this.state.Checkout,
+                Harga: !this.state.Harga,
                 Index: index
             }
         })
@@ -61,7 +61,7 @@ class Home extends Component {
                     ))}
                     <div>
                         {this.state.DetailProduct && <DetailProduct nomor={this.state.Index} />}
-                        {this.state.Checkout && <Checkout nomor={this.state.Index} />}
+                        {this.state.Harga && <Harga nomor={this.state.Index} />}
                     </div>
                 </div>                 
             </>
