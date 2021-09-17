@@ -7,7 +7,9 @@ class Checkout extends Component {
             Buku: '',
             Harga: 0,
             Kuantitas: 1,
-            TotalHarga: 0
+            TotalHarga: 0,
+            Nama: '',
+            Alamat: ''
         }
     }
 
@@ -44,12 +46,13 @@ class Checkout extends Component {
         return (
             <>
                 <div>
-                    <p>Beli Buku {this.state.Buku}</p>
+                    <br/>
+                    <h5>Beli Buku {this.state.Buku}</h5>
                 </div>
                 <p>Masukkan jumlah buku</p>
                 <input onChange={this.handleChange} type="number" name="Kuantitas" min="1" value={this.state.Kuantitas}/>
                 <p>Total Harga</p>
-                <p>{this.state.TotalHarga}</p>
+                <p>Rp. {this.state.TotalHarga.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.')}</p>
             </>
         );
     }
